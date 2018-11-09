@@ -57,7 +57,12 @@ $wgDBserver = "localhost";
 $wgDBname = "banana_university";
 $wgDBuser = "root";
 $wgDBpassword = "root";
-
+// $wgDBtype = "sqlite";
+// $wgDBserver = "";
+// $wgDBname = "bananacoding_wiki";
+// $wgDBuser = "";
+// $wgDBpassword = "";
+// $wgSQLiteDataDir = "/banana-university";
 # MySQL specific settings
 $wgDBprefix = "";
 
@@ -151,3 +156,7 @@ $wgGroupPermissions['*']['read'] = false;
 
 # Disable anonymous editing
 $wgGroupPermissions['*']['edit'] = false;
+
+$wgShowExceptionDetails = true;
+$wgShowDBErrorBacktrace = true;
+$wgShowSQLErrors = true;
