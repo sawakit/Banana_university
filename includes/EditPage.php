@@ -2723,7 +2723,7 @@ ERROR;
 		$out->addHTML( Html::openElement(
 			'form',
 			[
-				'class' => 'mw-editform',
+				'class' => 'mw-editform wall-shadow-white p-4',
 				'id' => self::EDITFORM_ID,
 				'name' => self::EDITFORM_ID,
 				'method' => 'post',
@@ -3551,7 +3551,7 @@ ERROR;
 		if ( $langcode ) {
 			$msg->inLanguage( $langcode );
 		}
-		return "<div id=\"editpage-copywarn\">\n" .
+		return "<div class=\"description-edit\" id=\"editpage-copywarn\">\n" .
 			$msg->$format() . "\n</div>";
 	}
 
@@ -3645,8 +3645,8 @@ ERROR;
 			$this->context->msg( 'word-separator' )->escaped() .
 			$this->context->msg( 'newwindow' )->parse();
 
-		$out->addHTML( "	<span class='cancelLink'>{$cancel}</span>\n" );
-		$out->addHTML( "	<span class='editHelp'>{$edithelp}</span>\n" );
+		$out->addHTML( "	<span class='cancelLink btn-link-cancel'>{$cancel}</span>\n" );
+		// $out->addHTML( "	<span class='editHelp'>{$edithelp}</span>\n" );
 		$out->addHTML( "</div><!-- editButtons -->\n" );
 
 		Hooks::run( 'EditPage::showStandardInputs:options', [ $this, $out, &$tabindex ] );
@@ -4299,7 +4299,7 @@ ERROR;
 			'inputId' => 'wpSave',
 			// Support: IE 6 – Use <input>, otherwise it can't distinguish which button was clicked
 			'useInputTag' => true,
-			'flags' => [ 'progressive', 'primary' ],
+			'flags' => [ 'progressive' ],
 			'label' => $buttonLabel,
 			'infusable' => true,
 			'type' => 'submit',

@@ -86,7 +86,7 @@ class PreferencesForm extends HTMLForm {
 			$html .= "\n" . $linkRenderer->makeLink( $t, $this->msg( 'restoreprefs' )->text(),
 				Html::buttonAttributes( $attrs, [ 'mw-ui-quiet' ] ) );
 
-			$html = Xml::tags( 'div', [ 'class' => 'mw-prefs-buttons' ], $html );
+			$html = Xml::tags( 'div', [ 'class' => 'mw-prefs-buttons mt-0 bg-white' ], $html );
 		}
 
 		return $html;

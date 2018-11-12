@@ -30,7 +30,7 @@ trait LabelElement {
 		$this->label = isset( $config['labelElement'] ) ? $config['labelElement'] : new Tag( 'span' );
 
 		// Initialization
-		$this->label->addClasses( [ 'oo-ui-labelElement-label' ] );
+		$this->label->addClasses( [ 'oo-ui-labelElement-label font-14 mb-0' ] );
 		$this->setLabel( isset( $config['label'] ) ? $config['label'] : null );
 
 		$this->registerConfigCallback( function ( &$config ) {

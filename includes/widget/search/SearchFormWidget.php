@@ -277,7 +277,7 @@ class SearchFormWidget {
 			$hidden .= Html::hidden( $key, $value );
 		}
 
-		$divider = "<div class='divider'></div>";
+		$divider = "<div class='dropdown-divider'></div>";
 
 		// Stuff to feed SpecialSearch::saveNamespaces()
 		$user = $this->specialSearch->getUser();

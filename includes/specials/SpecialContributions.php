@@ -520,7 +520,7 @@ class SpecialContributions extends IncludableSpecialPage {
 			[
 				'method' => 'get',
 				'action' => wfScript(),
-				'class' => 'mw-contributions-form'
+				'class' => 'mw-contributions-form my-5'
 			]
 		);
 

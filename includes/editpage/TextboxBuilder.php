@@ -115,7 +115,7 @@ class TextboxBuilder {
 		// * mw-editfont-monospace
 		// * mw-editfont-sans-serif
 		// * mw-editfont-serif
-		$class = 'mw-editfont-' . $user->getOption( 'editfont' );
+		$class = 'bg-input mw-editfont-' . $user->getOption( 'editfont' );
 
 		if ( isset( $attribs['class'] ) ) {
 			if ( is_string( $attribs['class'] ) ) {

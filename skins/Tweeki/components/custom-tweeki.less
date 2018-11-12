@@ -53,11 +53,17 @@ button,a,input{
 	padding-left: 15px;
 }
 
-input{
+input.form-control{
 	color: #495057 !important;
-	padding: 10px !important;
+	padding: 10px;
 }
-
+input[id="wpDestFile"],
+textarea[id="wpUploadDescription"]{
+	background-color: #F1F3F5;
+	color: #495057;
+	border: none;
+	box-shadow: none;
+}
 #userloginForm label{
 	color: #495057 !important;
 	font-size: 14px;
@@ -81,12 +87,12 @@ input{
 	color: #FFFFFF;
 	background-color: #20C997;
   border: 1px solid #20C997;
-  border-radius: 5px;
-}
-.mw-htmlform-submit.mw-ui-primary:hover{
-	color: #20C997;
-	background-color: transparent;
-  border: 1px solid #20C997;
+	border-radius: 5px;
+	&:hover{
+		color: #20C997;
+		background-color: transparent;
+		border: 1px solid #20C997;
+	}
 }
 .mw-userlogin-help,
 .mw-ui-vform .mw-form-related-link-container{
@@ -113,8 +119,136 @@ input{
 	color: #FFFFFF !important;
 	background-color: #B4B4B4;
 	border-radius: 5px;
-	width: 50%;
 }
 .mt-minus-10px{
 	margin-top: -10px;
+}
+.search-query-custom{
+	background-color: #F1F3F5;
+	color: #495057;
+	border: none;
+	box-shadow: none;
+	&:focus{
+		background-color: #F1F3F5;
+	}
+}
+input,.form-control:focus{
+	border-color: transparent;
+	box-shadow: none;
+}
+.suggestions-result-current{
+	background-color: #339AF0 !important;
+	border: none;
+}
+.description-edit{
+	font-size: 0.55em !important;
+	color: #495057;
+	text-indent: 15px;
+}
+input[type="text"].bg-input,
+textarea.bg-input{
+	background-color: #F1F3F5 !important;
+	color: #495057 !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+.mw-toolbar-editbutton{
+	opacity: 0.7;
+	&:hover{
+		opacity: 1;
+	}
+}
+.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type='checkbox']:checked + span,
+.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type='checkbox']:checked:hover + span,
+.client-js .mw-ui-checkbox:not(#noop) [type='checkbox']:enabled:checked + label:before,
+.client-js .mw-ui-checkbox:not(#noop) [type='checkbox']:enabled:checked:hover + label:before,
+.client-js .mw-ui-checkbox:not(#noop) [type='checkbox']:enabled:checked:focus + label:before{
+  background-color: #339AF0;
+  border-color: #339AF0;
+}
+.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type='checkbox']:focus + span{
+	border-color: #339AF0;
+  box-shadow: inset 0 0 0 1px #339AF0;
+}
+.oo-ui-buttonElement.oo-ui-labelElement{
+	input.oo-ui-buttonElement-button[name="wpSave"]{
+		color: #FFFFFF !important;
+		background-color: #339AF0 !important;
+		border-color: #339AF0 !important;
+		font-weight: 400 !important;
+		&:hover{
+			background-color: rgb(17, 131, 224) !important;
+		}
+	}
+	input.oo-ui-buttonElement-button[name="wpPreview"],
+	input.oo-ui-buttonElement-button[name="wpDiff"]{
+		color: #495057!important;
+		font-weight: 400 !important;
+		border: 1px solid #495057 !important;
+	}
+}
+.btn-link-cancel a{
+	color: #FF6B6B !important;
+	&:hover{
+		color: rgb(209, 28, 28) !important;
+	}
+}
+.mw-prefs-buttons .mw-htmlform-submit{
+	color: #FFFFFF !important;
+	background-color: #339AF0 !important;
+	border-color: #339AF0 !important;
+	font-weight: 400 !important;
+	width: 30%;
+	&:hover{
+		background-color: rgb(17, 131, 224) !important;
+	}
+}
+
+fieldset{
+	background-color: #FFFFFF;
+}
+.bg-white{
+	background-color: #FFFFFF;
+}
+#mw-upload-form,
+#mw-watchlist-form,
+.mw-contributions-form{
+	background-color: #FFFFFF;
+	padding: 40px;
+	fieldset{
+		background-color: transparent;
+	}
+}
+input.mw-htmlform-submit[name="wpUpload"]{
+	color: #FFFFFF !important;
+	background-color: #339AF0 !important;
+	border-color: #339AF0 !important;
+	font-weight: 400 !important;
+	width: 30%;
+	&:hover{
+		background-color: rgb(17, 131, 224) !important;
+	}
+}
+.dropdown-menu{
+	min-width: 15rem !important;
+	li a,
+	li a:hover,
+	li a:focus{
+		padding: 10px 16px;
+		background-color: transparent;
+		background-image: none;
+	}
+	li.active a,
+	li.active a:hover,
+	li.active a:focus{
+		color: #339AF0;
+		background-color: transparent;
+		background-image: none;
+	}
+}
+.dropdown-menu li a{
+	color: #495057 !important;
+	&:hover{
+		color: #339AF0 !important;
+	}
 }

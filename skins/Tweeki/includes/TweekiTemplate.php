@@ -448,7 +448,6 @@ class TweekiTemplate extends BaseTemplate {
 														<i class="fa fa-user fa-stack-1x fa-inverse"></i>
 													</span>
 													<span class="tweeki-username">' . $this->data['username'] . '</span>',
-								'icon' => 'user',
 								'id' => 'pt-personaltools',
 								'items' => $divideditems
 								]];
@@ -1013,7 +1012,7 @@ class TweekiTemplate extends BaseTemplate {
 		
 		echo $this->makeSearchInput( [ 
 			'id' => 'searchInput',
-			'class' => 'search-query form-control pl-5 rounded-50',
+			'class' => 'search-query form-control pl-5 rounded-50 search-query-custom',
 			'placeholder' => $skin->getMsg( 'Search' )->text()
 		] );	
 

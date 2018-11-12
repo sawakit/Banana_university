@@ -604,6 +604,7 @@ class SpecialWatchlist extends ChangesListSpecialPage {
 		$form .= Xml::openElement( 'form', [
 			'method' => 'get',
 			'action' => wfScript(),
+			'class' => 'my-5',
 			'id' => 'mw-watchlist-form'
 		] );
 		$form .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );

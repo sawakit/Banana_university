@@ -608,7 +608,7 @@ class TweekiHooks {
 			if ( ( !isset( $entry['text'] ) || $entry['text'] == "" ) // no 'text'
 				&& ( !isset( $entry['html'] ) || $entry['html'] == "" ) // and no 'html'
 			) {
-				$renderedMenu .= '<li class="divider" />';
+				$renderedMenu .= '<li class="dropdown-divider" />';
 			}
 
 			// standard menu entry
