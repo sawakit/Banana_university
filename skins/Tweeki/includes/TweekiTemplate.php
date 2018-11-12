@@ -221,7 +221,7 @@ class TweekiTemplate extends BaseTemplate {
 								'href' => $link['href'],
 								'href_implicit' => false,
 								'id' => 'ca-edit-ext',
-								'icon' => 'pencil',
+								'icon' => 'edit',
 								'text' => wfMessage( 'tweeki-edit-ext', $this->data['namespace'] )->plain()
 								];
 							$button['items'] = $views;
@@ -234,7 +234,7 @@ class TweekiTemplate extends BaseTemplate {
 							$button = [
 								'href' => $link['href'],
 								'id' => 'ca-edit',
-								'icon' => 'pencil',
+								'icon' => 'edit',
 								'text' => wfMessage( 'tweeki-edit-ext', $this->data['namespace'] )->plain()
 								];
 						}
@@ -1073,7 +1073,7 @@ class TweekiTemplate extends BaseTemplate {
 			
 			foreach ( $this->getFooterLinks() as $category => $links ) { 
 				if ( $this->checkVisibility( 'footer-' . $category ) ) { 
-					echo '<ul id="footer-' . $category . '">';
+					echo '<ul class="mt-1" id="footer-' . $category . '">';
 					foreach ( $links as $link ) { 
 						if ( $this->checkVisibility( 'footer-' . $category . '-' . $link ) ) { 
 							echo '<li id="footer-' . $category . '-' . $link . '">';

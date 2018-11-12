@@ -658,7 +658,7 @@ class TweekiHooks {
 
 		// set icons for individual buttons (used by some navigational elements)
 		if ( isset( $item['icon'] )) {
-			$html = '<span class="glyphicon glyphicon-' . $item['icon'] . '"></span> ' . $html;
+			$html = '<span class="fa fa-' . $item['icon'] . '"></span> ' . $html;
 		}
 
 		if ( isset( $options['text-wrapper'] ) ) {

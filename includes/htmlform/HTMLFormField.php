@@ -540,7 +540,7 @@ abstract class HTMLFormField {
 
 		$outerDivClass = [
 			'mw-input',
-			'mw-htmlform-nolabel' => ( $label === '' )
+			'mw-htmlform-nolabel font-14 color-blue text-right' => ( $label === '' )
 		];
 
 		$horizontalLabel = isset( $this->mParams['horizontal-label'] )
@@ -555,7 +555,7 @@ abstract class HTMLFormField {
 				$inputHtml . "\n$errors"
 			);
 		}
-		$divCssClasses = [ "mw-htmlform-field-$fieldType",
+		$divCssClasses = [ "mw-htmlform-field-$fieldType col-12",
 			$this->mClass, $this->mVFormClass, $errorClass ];
 
 		$wrapperAttributes = [

@@ -52,7 +52,7 @@ class SkinTweeki extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
 
-		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1' );
+		// $out->addMeta( 'viewport', 'width=device-width, initial-scale=1' );
 		$out->addModules( 'skins.tweeki.scripts' );
 		if( $this->tweekiConfig->get( 'TweekiSkinUseTooltips' ) ) {
 			$out->addModules( 'skins.tweeki.tooltips' );

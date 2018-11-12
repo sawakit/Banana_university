@@ -24,7 +24,7 @@
 	"tweeki-sidebar-left-btnclass": "btn btn-primary btn-block",
 	"tweeki-sidebar-left-wrapperclass": "btn-group btn-block",
 	"tweeki-sidebar-right": "EDIT-EXT,TOC",
-	"tweeki-sidebar-right-btnclass": "btn btn-primary btn-edit",
+	"tweeki-sidebar-right-btnclass": "btn btn-edit mt-minus-10px pt-3",
 	"tweeki-sidebar-right-wrapperclass": "btn-group btn-block",
 	"tweeki-footer": "FOOTER",
 	"tweeki-footer-custom": "LOGIN",

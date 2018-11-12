@@ -635,11 +635,11 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 			$brandimageWikiPage = WikiPage::factory( $brandimageTitle );
 			if ( method_exists( $brandimageWikiPage, 'getFile' ) ) {
 				$brandimage = $brandimageWikiPage->getFile()->getFullUrl();
-				$brand = '<div class="col-12 text-center"><img class="mw-120" src="' . $brandimage . '" alt="' . $this->data['sitename'] . '" /></div>';
+				$brand = '<div class="col-12 text-center mb-5"><img class="mw-120" src="' . $brandimage . '" alt="' . $this->data['sitename'] . '" /></div>';
 			}
 		}
 
-		$html = Html::rawElement( 'div', [ 'class' => 'mw-ui-container col-7 mx-auto wall-shadow-white p-40px' ],
+		$html = Html::rawElement( 'div', [ 'class' => 'mw-ui-container col-lg-7 mx-auto wall-shadow-white p-40px' ],
 			$loginPrompt
 			. $languageLinks
 			. $signupStart
@@ -1071,7 +1071,7 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 				'linkcontainer' => [
 					// help link
 					'type' => 'info',
-					'cssclass' => 'mw-form-related-link-container mw-userlogin-help',
+					'cssclass' => 'mw-form-related-link-container mw-userlogin-help font-14 color-blue',
 					// 'id' => 'mw-userlogin-help', // FIXME HTMLInfoField ignores this
 					'raw' => true,
 					'default' => Html::element( 'a', [
