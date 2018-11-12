@@ -646,7 +646,7 @@ class TweekiTemplate extends BaseTemplate {
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="navbar-collapse collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav ml-auto">
+						<ul class="navbar-nav order-12">
 							<?php $this->renderNavbarElement( 'right' ); ?>
 						</ul>
 					</div>
@@ -1001,7 +1001,7 @@ class TweekiTemplate extends BaseTemplate {
 			echo 'class="navbar-form navbar-left" '; 
 		}
 		if( $context == 'navbar-right' ) {
-			echo 'class="navbar-form navbar-right pull-right" ';
+			echo 'class="navbar-form navbar-right order-1 ml-auto" ';
 		}
 		echo 'action="';
 		$this->text( 'wgScript' );
