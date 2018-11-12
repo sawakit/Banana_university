@@ -627,12 +627,24 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 				)
 			);
 		}
+		
+		$brandmsg = wfMessage( 'tweeki-logo-brand-login' );
+		$brand = $brandmsg->text();
+		$brandimageTitle = Title::newFromText( $brand );
+		if ( ! is_null( $brandimageTitle ) && $brandimageTitle->exists() ) {
+			$brandimageWikiPage = WikiPage::factory( $brandimageTitle );
+			if ( method_exists( $brandimageWikiPage, 'getFile' ) ) {
+				$brandimage = $brandimageWikiPage->getFile()->getFullUrl();
+				$brand = '<div class="col-12 text-center"><img class="mw-120" src="' . $brandimage . '" alt="' . $this->data['sitename'] . '" /></div>';
+			}
+		}
 
-		$html = Html::rawElement( 'div', [ 'class' => 'mw-ui-container' ],
+		$html = Html::rawElement( 'div', [ 'class' => 'mw-ui-container col-7 mx-auto wall-shadow-white p-40px' ],
 			$loginPrompt
 			. $languageLinks
 			. $signupStart
-			. Html::rawElement( 'div', [ 'id' => 'userloginForm' ],
+			. $brand 
+			. Html::rawElement( 'div', [ 'id' => 'userloginForm', 'class' => 'row' ],
 				$formHtml
 			)
 			. $benefitsContainer
@@ -1033,11 +1045,11 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 				'username' => [
 					'label-raw' => $this->msg( 'userlogin-yourname' )->escaped() . $secureLoginLink,
 					'id' => 'wpName1',
-					'placeholder-message' => 'userlogin-yourname-ph',
+					// 'placeholder-message' => 'userlogin-yourname-ph',
 				],
 				'password' => [
 					'id' => 'wpPassword1',
-					'placeholder-message' => 'userlogin-yourpassword-ph',
+					// 'placeholder-message' => 'userlogin-yourpassword-ph',
 				],
 				'domain' => [],
 				'extrainput' => [],
@@ -1047,7 +1059,7 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 					'name' => 'wpRemember',
 					'label-message' => $this->msg( 'userlogin-remembermypassword' )
 						->numParams( $expirationDays ),
-					'id' => 'wpRemember',
+					'id' => 'wpRemember'
 				],
 				'loginattempt' => [
 					// submit button

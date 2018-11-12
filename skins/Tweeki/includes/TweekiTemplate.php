@@ -128,7 +128,7 @@ class TweekiTemplate extends BaseTemplate {
 				}
 			}
 		}
-		$mainclass = 'col-md-offset-' . $main_offset . ' col-md-' . $main_width;
+		$mainclass = 'offset-md-' . $main_offset . ' col-md-' . $main_width;
 		$contentclass = $skin->data['userstateclass'];
 		$contentclass .= ' ' . wfMessage( 'tweeki-container-class' )->escaped();
 		$contentclass .= ( $skin->checkVisibility( 'navbar' ) ) ? ' with-navbar' : ' without-navbar';
@@ -157,11 +157,11 @@ class TweekiTemplate extends BaseTemplate {
 
 <?php
 		if( !$skin->checkEmptiness( 'sidebar-left' ) ) { 
-			$leftclass = 'col-md-' . $left_width . ' col-md-offset-' . $left_offset;
+			$leftclass = 'col-md-' . $left_width . ' offset-md-' . $left_offset;
 			$skin->renderSidebar( 'left', $leftclass ); 
 		}
 		if( !$skin->checkEmptiness( 'sidebar-right' ) ) { 
-			$rightclass = 'col-md-' . $right_width . ' col-md-offset-' . $right_offset;
+			$rightclass = 'col-md-' . $right_width . ' offset-md-' . $right_offset;
 			$skin->renderSidebar( 'right', $rightclass ); 
 		}
 		$skin->renderFooter();
@@ -313,6 +313,7 @@ class TweekiTemplate extends BaseTemplate {
 						'href' => '#',
 						'html' => $html,
 						'id' => 't-tools',
+						'class' => 'pt-2',
 						'items' => $divideditems
 						]];					
 					break;
@@ -442,7 +443,11 @@ class TweekiTemplate extends BaseTemplate {
 					if (count($items) > 0) { 
 						return [[
 								'href' => '#',
-								'html' => '<span class="tweeki-username">' . $this->data['username'] . '</span>',
+								'html' => '<span class="fa-stack fa-lg">
+														<i class="fa fa-circle fa-stack-2x"></i>
+														<i class="fa fa-user fa-stack-1x fa-inverse"></i>
+													</span>
+													<span class="tweeki-username">' . $this->data['username'] . '</span>',
 								'icon' => 'user',
 								'id' => 'pt-personaltools',
 								'items' => $divideditems
@@ -632,39 +637,19 @@ class TweekiTemplate extends BaseTemplate {
 	public function renderNavbar() {
 		if ( $this->checkVisibility( 'navbar' ) ) { ?>
 			<!-- navbar -->
-			<div id="mw-navigation" class="<?php $this->msg( 'tweeki-navbar-class' ); ?>" role="navigation">
-				<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
-				<div id="mw-head" class="navbar-inner">
-					<div class="<?php $this->msg( 'tweeki-container-class' ); ?>">
-				
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
 
-							<?php if ( $this->checkVisibility( 'navbar-brand' ) ) { 
-								$this->renderBrand(); 
-								} ?>
-					
-						</div>
-
-						<div id="navbar" class="navbar-collapse collapse">
-						<?php if ( $this->checkVisibility( 'navbar-left' ) ) { ?>
-							<ul class="nav navbar-nav">
-							<?php $this->renderNavbarElement( 'left' ); ?>
-							</ul>
-						<?php } ?>
-
-						<?php if ( $this->checkVisibility( 'navbar-right' ) ) { ?>
-							<ul class="nav navbar-nav navbar-right">
+			<div class="<?php $this->msg( 'tweeki-navbar-class' ); ?>" role="navigation">
+				<div class="container">
+					<?php if ( $this->checkVisibility( 'navbar-brand' ) ) { 
+						$this->renderBrand(); 
+						} ?>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="navbar-collapse collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
 							<?php $this->renderNavbarElement( 'right' ); ?>
-							</ul>
-						</div>
-						<?php } ?>
-
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -774,7 +759,7 @@ class TweekiTemplate extends BaseTemplate {
 		$options = $this->getParsingOptions( 'footer' );
 		if ( $this->checkVisibility( 'footer' ) ) { ?>
 			<!-- footer -->
-			<div id="footer" role="contentinfo" class="footer <?php $this->msg( 'tweeki-container-class' ); ?> <?php $this->msg( 'tweeki-footer-class' ); ?>"<?php $this->html( 'userlangattributes' ) ?>>
+			<div id="footer" role="contentinfo" class="footer <?php $this->msg( 'tweeki-container-fluid-class' ); ?> <?php $this->msg( 'tweeki-footer-class' ); ?>"<?php $this->html( 'userlangattributes' ) ?>>
 			<?php $this->buildItems( wfMessage( 'tweeki-footer' )->plain(), $options, 'footer' ); ?>
 			</div>
 			<!-- /footer -->
@@ -890,7 +875,7 @@ class TweekiTemplate extends BaseTemplate {
 		if( $context == 'sidebar-left' || $context == 'sidebar-right' ) {
 			echo '<div id="tweekiTOC"></div>';
 		} else {
-			echo '<li class="nav dropdown" id="tweekiDropdownTOC"><a id="n-toc" class="dropdown-toggle" data-toggle="dropdown" href="#">' . wfMessage( 'Toc' )->text() . '<span class="caret"></span></a><ul class="dropdown-menu pull-right" role="menu" id="tweekiTOC"><li><a href="#">' . wfMessage( 'tweeki-toc-top' )->text() . '</a></li><li class="divider"></li></ul></li>';
+			echo '<li class="nav dropdown" id="tweekiDropdownTOC"><a id="n-toc" class="dropdown-toggle" data-toggle="dropdown" href="#">' . wfMessage( 'Toc' )->text() . '<span class="fa fa-angle-down"></span></a><ul class="dropdown-menu pull-right" role="menu" id="tweekiTOC"><li><a href="#">' . wfMessage( 'tweeki-toc-top' )->text() . '</a></li><li class="divider"></li></ul></li>';
 		}
 	}
 
@@ -939,14 +924,14 @@ class TweekiTemplate extends BaseTemplate {
 		$dropdown['class'] = ' dropdown-toggle';
 		$dropdown['data-toggle'] = 'dropdown';
 		$dropdown['text'] = $this->getMsg( 'userlogin' )->text();
-		$dropdown['html'] = $dropdown['text'] . ' <b class="caret"></b>';
+		$dropdown['html'] = $dropdown['text'] . ' <b class="fa fa-angle-down"></b>';
 		$dropdown['href'] = '#';
 		$dropdown['type'] = 'button';
 		$dropdown['id'] = 'n-login-ext';
 		$renderedDropdown = TweekiHooks::makeLink( $dropdown);
 		$wrapperclass = ( $context == 'footer' ) ? 'dropup' : 'nav';
 
-		echo '<li class="' . $wrapperclass . '">
+		echo '<li class="dropdown' . $wrapperclass . '">
 		' . $renderedDropdown . '
 		<ul class="dropdown-menu" role="menu" aria-labelledby="' . $this->getMsg( 'userlogin' )->text() . '" id="loginext">
 			<form action="' . $action . '" method="post" name="userloginext" class="clearfix">
@@ -1017,22 +1002,24 @@ class TweekiTemplate extends BaseTemplate {
 			echo 'class="navbar-form navbar-left" '; 
 		}
 		if( $context == 'navbar-right' ) {
-			echo 'class="navbar-form navbar-right" ';
+			echo 'class="navbar-form navbar-right pull-right" ';
 		}
 		echo 'action="';
 		$this->text( 'wgScript' );
 		echo '" id="searchform">
-				<div class="form-group">';
+				<div class="form-inline">';
+
+		echo '<i class="fa fa-search icon-seaech" aria-hidden="true"></i>';		
 		
 		echo $this->makeSearchInput( [ 
 			'id' => 'searchInput',
-			'class' => 'search-query form-control',
-			'placeholder' => $skin->getMsg( 'search' )->text()
+			'class' => 'search-query form-control pl-5 rounded-50',
+			'placeholder' => $skin->getMsg( 'Search' )->text()
 		] );	
 
 		echo $skin->makeSearchButton( 'go', [
 			'id' => 'mw-searchButton', 
-			'class' => 'searchButton btn hidden'
+			'class' => 'searchButton btn d-none'
 			] );
 
 		echo '

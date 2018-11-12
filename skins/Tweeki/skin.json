@@ -162,8 +162,8 @@
 		"TweekiSkinNavigationalElements": [],
 		"TweekiSkinSpecialElements": {
 			"FIRSTHEADING": "self::renderFirstHeading",
-			"TOC": "self::renderTOC",
 			"SEARCH": "self::renderSearch",
+			"TOC": "self::renderTOC",
 			"LOGO": "self::renderLogo",
 			"LOGIN-EXT": "self::renderLoginExt",
 			"FOOTER": "self::renderStandardFooter"

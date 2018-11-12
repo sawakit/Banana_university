@@ -574,7 +574,7 @@ class TweekiHooks {
 			$caret = array(
 				'class' => 'dropdown-toggle ' . $dropdown['class'],
 				'href' => '#',
-				'html' => '&zwnj;<b class="caret"></b>',
+				'html' => '&zwnj;<b class="fa fa-angle-down"></b>',
 				'data-toggle' => 'dropdown'
 				);
 			$renderedDropdown .= TweekiHooks::makeLink( $caret );
@@ -584,7 +584,7 @@ class TweekiHooks {
 		else {
 			$dropdown['class'] .= ' dropdown-toggle';
 			$dropdown['data-toggle'] = 'dropdown';
-			$dropdown['html'] = $dropdown['html'] . ' <b class="caret"></b>';
+			$dropdown['html'] = $dropdown['html'] . ' <b class="fa fa-angle-down"></b>';
 			$dropdown['href'] = '#';
 			$renderedDropdown .= TweekiHooks::makeLink( $dropdown );
 		}
