@@ -639,7 +639,7 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 			}
 		}
 
-		$html = Html::rawElement( 'div', [ 'class' => 'mw-ui-container col-lg-7 mx-auto wall-shadow-white p-40px' ],
+		$html = Html::rawElement( 'div', [ 'class' => 'mw-ui-container col-lg-6 mx-auto wall-shadow-white p-40px' ],
 			$loginPrompt
 			. $languageLinks
 			. $signupStart
@@ -1064,6 +1064,7 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 				'loginattempt' => [
 					// submit button
 					'type' => 'submit',
+					'cssclass' => '',
 					'default' => $this->msg( 'pt-login-' . $continuePart . 'button' )->text(),
 					'id' => 'wpLoginAttempt',
 					'weight' => 100,

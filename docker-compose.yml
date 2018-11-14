@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mediawiki:
+    image: php-wiki
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - database
+    volumes:
+      - .:/var/www/html/
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: banana_university
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./data/database:/var/lib/mysql
