@@ -130,12 +130,12 @@ class TweekiTemplate extends BaseTemplate {
 		}
 		$mainclass = 'offset-md-' . $main_offset . ' col-md-' . $main_width;
 		$contentclass = $skin->data['userstateclass'];
-		$contentclass .= ' ' . wfMessage( 'tweeki-container-class' )->escaped();
+		$contentclass .= ' ' . wfMessage( 'tweeki-container-fluid-class' )->escaped();
 		$contentclass .= ( $skin->checkVisibility( 'navbar' ) ) ? ' with-navbar' : ' without-navbar';
 		if( false !== stripos( wfMessage( 'tweeki-navbar-class' ), 'navbar-fixed' ) ) {
 			$contentclass .= ' with-navbar-fixed';
 		}
-
+		$contentclasscontainer = wfMessage( 'tweeki-container-class' );
 		$skin->renderNavbar();
 ?>
 		<div id="mw-page-base"></div>
@@ -146,10 +146,11 @@ class TweekiTemplate extends BaseTemplate {
 		<div id="contentwrapper" class="<?php echo $contentclass; ?>">
 
 			<?php if( !$skin->checkEmptiness( 'subnav' ) ) { $skin->renderSubnav( $mainclass ); } ?>
-
-			<div class="row">
-				<div class="<?php echo $mainclass ?>" role="main">
-					<?php $skin->renderContent(); ?>
+			<div class="<?php echo $contentclasscontainer; ?>">
+				<div class="row">
+					<div class="<?php echo $mainclass ?>" role="main">
+						<?php $skin->renderContent(); ?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -161,7 +162,7 @@ class TweekiTemplate extends BaseTemplate {
 			$skin->renderSidebar( 'left', $leftclass ); 
 		}
 		if( !$skin->checkEmptiness( 'sidebar-right' ) ) { 
-			$rightclass = 'col-md-' . $right_width . ' offset-md-' . $right_offset;
+			$rightclass = 'col-md-3 offset-md-11';
 			$skin->renderSidebar( 'right', $rightclass ); 
 		}
 		$skin->renderFooter();
@@ -1039,13 +1040,6 @@ class TweekiTemplate extends BaseTemplate {
 	/**
 	 * Render brand (linking to mainpage)
 	 */
-	// public function renderBrand() {
-	// 	$brandmsg = wfMessage( 'tweeki-navbar-brand' );
-	// 	if( !$brandmsg->isDisabled() ) {
-	// 		$brand = '<img src="../BananaCoding_top.png" alt="logo"/>';
-	// 		echo '<a href="' . htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) . '" class="navbar-brand">' . $brand . '</a>';
-	// 	}
-	// }
 	public function renderBrand() {
 		$brandmsg = wfMessage( 'tweeki-navbar-brand' );
 		if( !$brandmsg->isDisabled() ) {

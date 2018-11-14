@@ -137,8 +137,7 @@ require_once("$IP/extensions/EmbedVideo/EmbedVideo.php");
 wfLoadExtension("EmbedVideo");
 
 
-// $wgTweekiSkinHideAnon = array( 'EDIT-EXT' ,'TOC');
-$wgTweekiSkinHideAnon = array( 'EDIT-EXT' );
+$wgTweekiSkinHideAnon = array( 'TOC');
 
 $wgTweekiSkinUseAwesome = true;
 $wgTweekiSkinUseBootstrapTheme = true;
@@ -160,3 +159,10 @@ $wgGroupPermissions['*']['edit'] = false;
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
 $wgShowSQLErrors = true;
+
+
+$wgTweekiSkinGridNone = array( 
+ "mainoffset" => 0, 
+ "mainwidth" => 12 
+); 
+$wgTweekiSkinHideAnon = array( 'subnav' => true, 'PERSONAL' => true, 'TOOLBOX' => false );
