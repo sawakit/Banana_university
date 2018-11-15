@@ -760,7 +760,7 @@ class TweekiTemplate extends BaseTemplate {
 		if ( $this->checkVisibility( 'footer' ) ) { ?>
 			<!-- footer -->
 			<div id="footer" role="contentinfo" class="footer <?php $this->msg( 'tweeki-container-fluid-class' ); ?> <?php $this->msg( 'tweeki-footer-class' ); ?>"<?php $this->html( 'userlangattributes' ) ?>>
-			<?php $this->buildItems( wfMessage( 'tweeki-footer' )->plain(), $options, 'footer' ); ?>
+				<p class="color-white mb-0">Unana make with <i class="fa fa-heart"></i> By <a class="color-white" href="https://bananacoding.com/"> Banana Coding </a> |© 2018 All rights reserved.</p>
 			</div>
 			<!-- /footer -->
 		<?php }

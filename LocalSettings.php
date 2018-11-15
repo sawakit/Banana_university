@@ -133,6 +133,7 @@ wfLoadSkin( 'Vector' );
 
 
 require_once("$IP/extensions/EmbedVideo/EmbedVideo.php");
+require_once("$IP/extensions/HTMLTags/HTMLTags.php");
 
 wfLoadExtension("EmbedVideo");
 
@@ -166,3 +167,6 @@ $wgTweekiSkinGridNone = array(
  "mainwidth" => 12 
 ); 
 $wgTweekiSkinHideAnon = array( 'subnav' => true, 'PERSONAL' => true, 'TOOLBOX' => false );
+
+$wgHTMLTagsAttributes['a'] = array( 'href', 'class' );
+$wgHTMLTagsAttributes['fieldset'] = array();
