@@ -166,7 +166,7 @@ $wgTweekiSkinGridNone = array(
  "mainoffset" => 0, 
  "mainwidth" => 12 
 ); 
-$wgTweekiSkinHideAnon = array( 'subnav' => true, 'PERSONAL' => true, 'TOOLBOX' => false );
+$wgTweekiSkinHideAnon = array( 'subnav' => true, 'PERSONAL' => true, 'TOOLBOX' => true );
 
 $wgHTMLTagsAttributes['a'] = array( 'href', 'class' );
 $wgHTMLTagsAttributes['fieldset'] = array();
